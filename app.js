@@ -10,7 +10,7 @@ const app = express();
 
 let sessionOptions = session({
   secret: 'The Secret Session Option',
-  store: new MongoStore({client: require('./server'), dbName: 'eventlistings'}),
+  store: new MongoStore({client: require('./server'), dbName: 'writersbloc'}),
   resave: false,
   saveUninitialized: false,
   cookie: {maxAge: 1000 * 60 * 60 * 24, httpOnly: true}
