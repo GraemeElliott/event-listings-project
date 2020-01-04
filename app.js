@@ -1,5 +1,6 @@
 const express = require('express'),
       session = require('express-session'),
+      MongoStore = require('connect-mongo')(session),
       indexRouter = require('./routes/indexRoutes'),
       gigRouter = require('./routes/gigRoutes'),
       venueRouter = require('./routes/venueRoutes'),
@@ -9,6 +10,7 @@ const app = express();
 
 let sessionOptions = session({
   secret: 'The Secret Session Option',
+  store: new MongoStore({client: require('./server'), dbName: 'eventlistings'}),
   resave: false,
   saveUninitialized: false,
   cookie: {maxAge: 1000 * 60 * 60 * 24, httpOnly: true}
