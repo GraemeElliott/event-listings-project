@@ -21,7 +21,7 @@ app.use(sessionOptions);
 
 
 app.set('views', 'views');
-app.set('view engine', 'ejs');
+app.set('view engine', 'ejs'); 
 
 //app.use(bodyParser.urlencoded({extended: true}));
 //app.use(methodOverride('_method'));
