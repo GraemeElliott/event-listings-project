@@ -1,4 +1,4 @@
-const usersCollection = require('../server').collection('users');
+const usersCollection = require('../src/server').collection('users');
 const validator = require('validator');
 const bcrypt = require('bcryptjs');
 
